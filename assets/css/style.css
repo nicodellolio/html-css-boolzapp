@@ -1,14 +1,28 @@
 /* ### UTILITIES ### */
 
 :root {
-    --bg-top: (#009688);
-    --bg-bottom: (#dbdbd3);
-    --bg-nav: (#eaeaea);
-    --bg-buttons: (#b1b1b1);
-    --bg-bell: (#8edafc);
-    --bg-type: (#f3eeea);
-    --bg-search: (#fafafa);
-    --bg-mybaloon: (#d5f9ba);
+    --bg-top-: (#009688);
+    --bg-bottom-: (#dbdbd3);
+    --bg-nav-: (#eaeaea);
+    --bg-buttons-: (#b1b1b1);
+    --bg-bell-: (#8edafc);
+    --bg-type-: (#f3eeea);
+    --bg-search-: (#fafafa);
+    --bg-mybaloon-: (#d5f9ba);
+}
+
+& .avatar-container {
+    margin: 0.5rem 0;
+    width: 15%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: 50%;
+    
+    & img {
+      margin: auto;
+      height: 100%;
+      width: auto;
+    }
 }
 
 
@@ -17,6 +31,8 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .container {
@@ -48,25 +64,99 @@
             & .myself {
                 height: 70px;
                 background-color: #eaeaea;
+                display: flex;
+                padding-left: 1rem;
+
+                & .user-commands{
+                    width: 75%;
+                    font-size: 1.5rem;
+                    display: flex;
+                    justify-content: flex-end;
+                    gap: 1rem;
+                    align-items: center;
+                    color: #b1b1b1;
+                    padding-right:;
+                }
             }
 
             & .notification{
                 background-color: #8edafc;
+                height: 80px;
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 1rem;
+                padding: 0 1rem;
+
+                & .bell{
+                    background-color: #fff;
+                    border-radius: 50%;
+                    padding: 0.5rem;
+                    font-size: 2rem;
+                    color: #8edafc;                    
+                }
+
+                & .new-messages-ring{
+                    font-size: 0.9rem;
+                    font-weight: 500;
+                }
+                & .turn-on-ring{
+                    font-size: 0.85rem;
+                    color: grey;
+                    text-decoration: underline;
+                }
             }
 
             & .search{
                 background-color: #fafafa;
+                color: #b8bbbd;
+
+                & .magnifier{
+                    font-size: 1.25rem;
+                    background-color: #fff;
+                    padding: 2px 1rem 6px;
+                    margin: 0 -1rem 0 1rem;
+                }
+
+                & input{
+                    width: 80%;
+                    padding: 8px;
+                    margin: 7px 10px;
+                    font-size: 0.85rem;
+                    background-color: #fff;
+                    border: none;
+                    font-weight: 400;
+                }
             }
 
             & .chat-list {
                 max-height: 100%;
                 overflow: scroll;
-                height: calc(((100% - 10%) - 15%) - 70px);
+                height: calc(100% - 200px);
                 background-color: #fff;
             }
 
             & .user {
                 height: 80px;
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                padding: 0 1rem;
+                border-top: 2px solid #fafafa;
+                border-bottom: 2px solid #fafafa;
+
+                & .user-name{
+                    font-size: 1.15rem;
+                    font-weight: 600;
+                }
+                & .preview-message{
+                    font-size: 0.85rem;
+                    color: #b8bbbd;
+                }
+                & .time{
+                    color: #b8bbbd;
+                    margin-left: 3rem;
+                }
             }
         }
 
@@ -174,7 +264,7 @@
 /* ### DEBUG SECTION ### */
 
 .debug * {
-    border: 1px dashed grey;
+    /* border: 1px dashed grey; */
 }
 
 .debug .container {
@@ -186,19 +276,13 @@
     height: 100%;
 }
 
-.debug .myself {
+/* .debug .myself {
     background-color: #ff00ffa2;
-}
+} */
 
-.debug .notification {
-    height: 15%;
+/* .debug .notification {
     background-color: #0000ffa2;
-}
-
-.debug .search {
-    height: 10%;
-    background-color: #4bcecaa2;
-}
+} */
 
 .debug .user {
     height: 20%;
