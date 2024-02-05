@@ -1,9 +1,33 @@
+/* ### UTILITIES ### */
+
+:root {
+    --bg-top: (#009688);
+    --bg-bottom: (#dbdbd3);
+    --bg-nav: (#eaeaea);
+    --bg-buttons: (#b1b1b1);
+    --bg-bell: (#8edafc);
+    --bg-type: (#f3eeea);
+    --bg-search: (#fafafa);
+    --bg-mybaloon: (#d5f9ba);
+}
+
+
+
+/* ### MAIN STYLE SHEET ### */
 * {
     margin: 0;
     box-sizing: border-box;
 }
 
 .container {
+    background: linear-gradient(
+        to bottom,
+        #009688 0%,
+        #009688 15%,
+        #dbdbd3 15%,
+        #dbdbd3 100%
+    );
+
     display: flex;
     background-color: #d9dbd5;
     display: flex;
@@ -22,17 +46,27 @@
             min-width: 80px;               
 
             & .myself {
-                height: 85px;
+                height: 70px;
+                background-color: #eaeaea;
+            }
+
+            & .notification{
+                background-color: #8edafc;
+            }
+
+            & .search{
+                background-color: #fafafa;
             }
 
             & .chat-list {
                 max-height: 100%;
                 overflow: scroll;
-                height: calc(((100% - 10%) - 15%) - 85px);
+                height: calc(((100% - 10%) - 15%) - 70px);
+                background-color: #fff;
             }
 
             & .user {
-                height: 85px;
+                height: 80px;
             }
         }
 
@@ -43,11 +77,13 @@
             height: 100%;
 
             & .selected-user {
-                height: 85px;
+                height: 70px;
+                background-color: #eaeaea;
             }
 
             & .chat {
-                height: calc(100% - 170px);
+                height: calc(100% - 140px);
+                background-image: url(../img/mine.jpg);
             }
 
             & .baloons {
@@ -66,12 +102,18 @@
 
                 & .baloon.input {
                     align-self: flex-end;
+                    background-color: #d5f9ba;
+                }
+
+                & .baloon.answer{
+                    background-color: #fff;
                 }
 
             }
 
             & .type-section {
-                height: 85px;
+                height: 70px;
+                background-color: #f3eeea;
             }
         }
 
@@ -95,7 +137,7 @@
                 }
 
                 & .chat-list{
-                height: calc(100% - 85px);
+                height: calc(100% - 70px);
                 }
             }
 
@@ -137,7 +179,7 @@
 
 .debug .container {
     width: 100vw;
-    height: 696px;
+    height: 679px;
 }
 
 .debug .app-left {
@@ -156,10 +198,6 @@
 .debug .search {
     height: 10%;
     background-color: #4bcecaa2;
-}
-
-.debug .chat-list {
-    background-color: #99cd32a2;
 }
 
 .debug .user {
