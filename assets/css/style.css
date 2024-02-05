@@ -108,6 +108,21 @@
 
 }
 
+@media screen and (max-width: 540px) {
+    .container {
+
+        & .app {
+            
+            & .app-left {
+                display: none;
+            }
+
+            & .app-right{
+                width: 100%;
+            }
+        }
+    }
+}
 
 
 
