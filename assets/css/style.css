@@ -13,22 +13,91 @@
     & .app{
         width: 80%;
         display: flex;
+        height: 95%;
 
+        & .app-left{
+            display: flex;
+            flex-direction: column;
+            width: calc((100% / 12) * 4);
+
+            & .myself{
+                height: 85px;
+            }
+
+            & .chat-list{
+                max-height: 100%;
+                overflow: scroll;
+            }
+            
+            & .user{
+                height: 100px
+            }
+        }
         
         & .app-right{
             display: flex;
             flex-direction: column;
             width: calc((100% / 12) * 8);
+            height: 100%;
+
+            & .selected-user{
+                height: 85px;
+            }
+
+            & .chat{
+                height: calc(100% - 170px);
+            }
+
+            & .baloons{
+                height: 65%;
+                width: 80%;
+                margin: auto;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+                margin-top: 3rem;
+
+                & .baloon{
+                    height: 45%;
+                    width: 60%;
+                }
+
+                & .baloon.input{
+                    align-self: flex-end;
+                }
+
+            }
+
+            & .type-section{
+                height: 85px;
+            }
         }
         
-        & .app-left{
-            display: flex;
-            flex-direction: column;
-            width: calc((100% / 12) * 4);
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    .container{
+
+        & .app{
+            width: 100%;
+            height: 100%;
+
+            & .app-left{
+
+                .
+            }
         }
     }
 
 }
+
+
+
+
+
+
 
 /* ### DEBUG SECTION ### */
 
@@ -37,21 +106,18 @@
 }
 
 .debug .container{
-    width: 1440px;
+    width: 100vw;
     height: 696px;
-}
-
-& .debug .app{
-    height: 95%;
 }
 
 .debug .app-left{
     height: 100%;
 }
+
 .debug .myself{
-    height: 85px;
     background-color: #ff00ffa2;
 }
+
 .debug .notification{
     height: 15%;
     background-color: #0000ffa2;
@@ -61,7 +127,7 @@
     background-color: #4bcecaa2;
 }
 .debug .chat-list{
-    height: 62%;
+    height: calc(((100% - 10%) - 15% ) - 85px );
     background-color: #99cd32a2;
 }
 .debug .user{
@@ -72,35 +138,17 @@
 
 .debug .app-right{
     background-color: #0cd141bb;
-    height: 100%;
 }
 .debug .selected-user{
     background-color: #4bcecaa2;
-    height: 85px;
 }
 .debug .chat{
-    height: calc(100% - 170px);
     background-color: #99cd32a2;
-}
-.debug .baloons{
-    height: 65%;
-    width: 80%;
-    margin: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-top: 3rem;
 }
 .debug .baloon{
     background-color: grey;
-    height: 45%;
-    width: 60%;
-}
-.debug .baloon.input{
-    align-self: flex-end;
 }
 .debug .type-section{
-    height: 85px;
     background-color: #ff00ffa2;
 }
 
