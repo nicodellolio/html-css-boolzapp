@@ -1,27 +1,26 @@
 /* ### UTILITIES ### */
 
 :root {
-    --bg-top-: (#009688);
-    --bg-bottom-: (#dbdbd3);
-    --bg-nav-: (#eaeaea);
-    --bg-buttons-: (#b1b1b1);
-    --bg-bell-: (#8edafc);
-    --bg-type-: (#f3eeea);
-    --bg-search-: (#fafafa);
-    --bg-mybaloon-: (#d5f9ba);
+    --bg-top-: #009688;
+    --bg-bottom-: #dbdbd3;
+    --bg-nav-: #eaeaea;
+    --bg-buttons-: #b1b1b1;
+    --bg-bell-: #8edafc;
+    --bg-type-: #f3eeea;
+    --bg-search-: #fafafa;
+    --bg-mybaloon-: #d5f9ba;
 }
 
 & .avatar-container {
     margin: 0.5rem 0;
-    width: 15%;
+    width: 55px;
     aspect-ratio: 1;
     overflow: hidden;
     border-radius: 50%;
 
     & img {
         margin: auto;
-        height: 100%;
-        width: auto;
+        width: 100%;
     }
 }
 
@@ -43,7 +42,6 @@
             #dbdbd3 100%);
 
     display: flex;
-    background-color: #d9dbd5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -62,8 +60,9 @@
 
             & .myself {
                 height: 70px;
-                background-color: #eaeaea;
+                background-color: var(--bg-nav-);
                 display: flex;
+                justify-content: space-around;
                 padding-left: 1rem;
 
                 & .user-commands {
@@ -72,13 +71,14 @@
                     display: flex;
                     justify-content: flex-end;
                     gap: 1rem;
+                    padding-right: 2%;
                     align-items: center;
                     color: #b1b1b1;
                 }
             }
 
             & .notification {
-                background-color: #8edafc;
+                background-color: var(--bg-bell-);
                 height: 80px;
                 display: flex;
                 flex-wrap: wrap;
@@ -91,42 +91,52 @@
                     background-color: #fff;
                     border-radius: 50%;
                     padding: 0.5rem;
-                    color: #8edafc;
+                    color: var(--bg-bell-);
+
                 }
 
                 & .new-messages-ring {
                     font-size: 0.9rem;
                     font-weight: 500;
+                    overflow: hidden;
+
                 }
 
                 & .turn-on-ring {
                     font-size: 0.85rem;
                     color: grey;
                     text-decoration: underline;
+                    overflow: hidden;
+
                 }
             }
 
             & .search {
-                background-color: #fafafa;
+                background-color: var(--bg-search-);
                 color: #b8bbbd;
-                font-size: 120%;
-                /* overflow-x: hidden; */
+                font-size: 1.5rem;
+                padding: 0.5rem;
 
-                & .magnifier {
-                    background-color: #fff;
-                    padding: 2px 1rem 6px;
-                    margin: 0 -1rem 0 1rem;
+
+                & .searchbar{
+                    display: flex;
+                    box-shadow: 1px 1px 5px lightgrey;
+
+                    & .fa-solid{
+                        background-color: #fff;
+                        width: 5%;
+                        padding: 0.5rem 3rem 0.5rem 1rem;
+                    }
+                    
+                    & input {
+                        background-color: #fff;
+                        font-size: 0.85rem;
+                        border: none;
+                        padding: 5px;
+                        flex-grow: 1;
+                    }
                 }
 
-                & input {
-                    width: 80%;
-                    padding: 8px;
-                    margin: 7px 10px;
-                    font-size: 0.85rem;
-                    background-color: #fff;
-                    border: none;
-                    font-weight: 400;
-                }
             }
 
             & .chat-list {
@@ -140,10 +150,11 @@
                 height: 90px;
                 display: flex;
                 align-items: center;
+                justify-content: space-around;
                 gap: 1rem;
                 padding: 2.5rem 1rem;
-                border-top: 2px solid #fafafa;
-                border-bottom: 2px solid #fafafa;
+                border-top: 2px solid var(--bg-search-);
+                border-bottom: 2px solid var(--bg-search-);
 
                 & .user-name {
                     font-size: 1.15rem;
@@ -166,20 +177,21 @@
         }
 
         & .app-right {
-            display: flex;
-            flex-direction: column;
             width: calc((100% / 12) * 8);
             height: 100%;
-
+            display: flex;
+            flex-direction: column;
+            
             & .selected-user {
                 height: 70px;
-                background-color: #eaeaea;
+                background-color: var(--bg-nav-);
                 display: flex;
+                justify-content: space-around;
                 align-items: center;
 
                 & .avatar-container {
                     margin: 0.5rem 1rem;
-                    width: 6%;
+                    width: 55px;
                     aspect-ratio: 1;
                     overflow: hidden;
                     border-radius: 50%;
@@ -198,6 +210,7 @@
 
                 & .last-seen {
                     font-size: 0.85rem;
+                    width: 200%;
                     color: grey;
                 }
 
@@ -208,7 +221,7 @@
                     justify-content: flex-end;
                     gap: 1.25rem;
                     align-items: center;
-                    color: #b1b1b1;
+                    color: var(--bg-buttons-);
                     padding-right: 3%;
 
                 }
@@ -218,6 +231,7 @@
             & .chat {
                 height: calc(100% - 140px);
                 background-image: url(../img/mine.jpg);
+                overflow: scroll;
             }
 
             & .baloons {
@@ -258,7 +272,7 @@
 
                 & .baloon.input {
                     align-self: flex-end;
-                    background-color: #d5f9ba;
+                    background-color: var(--bg-mybaloon-);
                 }
 
                 & .baloon.answer {
@@ -269,7 +283,7 @@
 
             & .type-section {
                 height: 70px;
-                background-color: #f3eeea;
+                background-color: var(--bg-type-);
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -306,7 +320,7 @@
                     border-right: 1px solid #b1b1b15b;
 
                     & .avatar-container {
-                        width: 80%;
+                        width: 55px;
                     }
 
                     .user-commands {
@@ -327,9 +341,6 @@
                         display: none;
                     }
 
-                    & .avatar-container {
-                        width: 100%;
-                    }
                 }
             }
 
@@ -359,6 +370,17 @@
 
                 & .app-right {
                     width: 100%;
+
+                    & .selected-user{
+                        & .last-seen {
+                        width: 120%;
+                        }
+                    }
+                    
+
+                    & .chat{
+                        overflow: scroll;
+                    }
                 }
             }
         }
@@ -406,3 +428,4 @@
     .debug .type-section {
         background-color: #ff00ffa2;
     }
+}
