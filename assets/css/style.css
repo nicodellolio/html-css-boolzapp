@@ -269,6 +269,10 @@
                         top: 1rem;
                         right: 1rem;
                         transform: none;
+
+                        & .fa-chevron-down{
+                            transition: all 0.75s ease;
+                        }
                     }
                 }
 
@@ -290,6 +294,24 @@
 
 }
 
+.type-section {
+    height: 70px;
+    background-color: var(--bg-type-);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 180%;
+    padding: 3%;
+    color: grey;
+
+    & input {
+        font-size: 0.85rem;
+        border: none;
+        width: 85%;
+        padding: 0.75rem;
+        border-radius: 5px;
+    }
+}
 
 /* ### BONUS MENU ### */
 .options-menu {
@@ -321,23 +343,30 @@
 
 }
 
-& .type-section {
-    height: 70px;
-    background-color: var(--bg-type-);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 180%;
-    padding: 3%;
-    color: grey;
+.emoji{
+    position: relative;
 
-    & input {
-        font-size: 0.85rem;
-        border: none;
-        width: 85%;
-        padding: 0.75rem;
-        border-radius: 5px;
+    & .fa-face-smile{
+        transition: all 0.4s ease-out;
     }
+}
+.emoji-table{
+    display: flex;
+    visibility: hidden;
+    background-color: var(--bg-search-);
+    flex-wrap: wrap;
+    width: 300px;
+    border-radius: 20px;
+    position: absolute;
+    top: -14rem;
+    left: -1rem;
+    transition: all 0.2s ease-out;
+}
+.single-emoji{
+    font-size: 2.5rem;
+    padding: 0.5rem 1.85rem;
+    width: calc((100% / 12) + 12% );
+    
 }
 
 /* ### BONUS SECTION ### */
@@ -348,14 +377,32 @@
 }
 .options-menu li:hover{
     background-color: rgb(223, 222, 222);
-    font-weight: 800;
+    font-weight: 700;
     cursor: pointer;
     padding: .25rem;
 }
-
 .menu-drop-down:hover .fa-chevron-down{
     transform: rotate(180deg);
 }
+
+
+.emoji:hover .emoji-table {
+    visibility: visible;
+}
+.emoji-table .single-emoji:hover{
+    background-color: rgb(223, 222, 222);
+    cursor: pointer;
+    padding: 3px;
+}
+.emoji:hover .fa-face-smile{
+    background-color: var(--bg-buttons-);
+    font-size: 2rem;
+    border-radius: 50%;
+    padding: 0.5rem;
+}
+
+
+
 
 
 
