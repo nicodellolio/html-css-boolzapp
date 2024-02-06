@@ -25,7 +25,6 @@
 }
 
 
-
 /* ### MAIN STYLE SHEET ### */
 * {
     margin: 0;
@@ -51,11 +50,13 @@
         width: 80%;
         display: flex;
         height: 95%;
+        box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.21);
+
 
         & .app-left {
             display: flex;
             flex-direction: column;
-            width: calc((100% / 12) * 4);
+            width: 384px;
             min-width: 80px;
 
             & .myself {
@@ -63,7 +64,7 @@
                 background-color: var(--bg-nav-);
                 display: flex;
                 justify-content: space-around;
-                padding-left: 1rem;
+                padding-left: 0.25rem;
 
                 & .user-commands {
                     width: 75%;
@@ -118,16 +119,16 @@
                 padding: 0.5rem;
 
 
-                & .searchbar{
+                & .searchbar {
                     display: flex;
                     box-shadow: 1px 1px 5px lightgrey;
 
-                    & .fa-solid{
+                    & .fa-solid {
                         background-color: #fff;
                         width: 5%;
                         padding: 0.5rem 3rem 0.5rem 1rem;
                     }
-                    
+
                     & input {
                         background-color: #fff;
                         font-size: 0.85rem;
@@ -164,7 +165,7 @@
                 & .preview-message {
                     font-size: 0.85rem;
                     color: #b8bbbd;
-                    margin-right: 2.5rem;
+                    margin-right: 1.5rem;
                 }
 
                 & .time {
@@ -177,11 +178,11 @@
         }
 
         & .app-right {
-            width: calc((100% / 12) * 8);
+            width: calc(100% - 384px);
             height: 100%;
             display: flex;
             flex-direction: column;
-            
+
             & .selected-user {
                 height: 70px;
                 background-color: var(--bg-nav-);
@@ -261,7 +262,7 @@
                         right: 1px
                     }
 
-                    & .btd {
+                    & .menu-drop-down {
                         font-weight: 00;
                         color: #b8bbbd;
                         position: absolute;
@@ -281,6 +282,34 @@
 
             }
 
+            /* ### BONUS MENU ### */
+            .options-menu {
+                display: none;
+                position: absolute;
+                right: -15px;
+                top: 40px;
+                z-index: 5;
+
+                &>ul {
+                    list-style: none;
+                    background-color: var(--bg-search-);
+                    width: fit-content;
+                    padding: 1rem;
+                    line-height: 2;
+                    border-radius: 15px;
+
+
+                    & li:last-child {
+                        border-top: 1px solid grey;
+                        padding-top: 0.25rem;
+                        margin-top: 0.25rem;
+                        color: red;
+                    }
+
+                }
+
+            }
+
             & .type-section {
                 height: 70px;
                 background-color: var(--bg-type-);
@@ -288,7 +317,7 @@
                 justify-content: space-between;
                 align-items: center;
                 font-size: 180%;
-                padding: 2rem;
+                padding: 3%;
                 color: grey;
 
                 & input {
@@ -305,6 +334,13 @@
     }
 
 }
+
+/* ### BONUS SECTION ### */
+
+.app:hover .options-menu{
+    display: block;
+}
+
 
 @media screen and (max-width: 991px) {
     .container {
@@ -347,7 +383,7 @@
             & .app-right {
                 width: calc((100% / 12) * 11);
 
-                & .selected-user{
+                & .selected-user {
                     & .user-commands {
                         width: 67%;
                         padding-right: 5%;
@@ -371,14 +407,13 @@
                 & .app-right {
                     width: 100%;
 
-                    & .selected-user{
+                    & .selected-user {
                         & .last-seen {
-                        width: 120%;
+                            width: 120%;
                         }
                     }
-                    
 
-                    & .chat{
+                    & .chat {
                         overflow: scroll;
                     }
                 }
