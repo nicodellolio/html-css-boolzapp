@@ -17,11 +17,11 @@
     aspect-ratio: 1;
     overflow: hidden;
     border-radius: 50%;
-    
+
     & img {
-      margin: auto;
-      height: 100%;
-      width: auto;
+        margin: auto;
+        height: 100%;
+        width: auto;
     }
 }
 
@@ -36,19 +36,18 @@
 }
 
 .container {
-    background: linear-gradient(
-        to bottom,
-        #009688 0%,
-        #009688 15%,
-        #dbdbd3 15%,
-        #dbdbd3 100%
-    );
+    background: linear-gradient(to bottom,
+            #009688 0%,
+            #009688 15%,
+            #dbdbd3 15%,
+            #dbdbd3 100%);
 
     display: flex;
     background-color: #d9dbd5;
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
 
     & .app {
         width: 80%;
@@ -59,7 +58,7 @@
             display: flex;
             flex-direction: column;
             width: calc((100% / 12) * 4);
-            min-width: 80px;               
+            min-width: 80px;
 
             & .myself {
                 height: 70px;
@@ -67,7 +66,7 @@
                 display: flex;
                 padding-left: 1rem;
 
-                & .user-commands{
+                & .user-commands {
                     width: 75%;
                     font-size: 1.5rem;
                     display: flex;
@@ -75,11 +74,10 @@
                     gap: 1rem;
                     align-items: center;
                     color: #b1b1b1;
-                    padding-right:;
                 }
             }
 
-            & .notification{
+            & .notification {
                 background-color: #8edafc;
                 height: 80px;
                 display: flex;
@@ -87,38 +85,40 @@
                 align-items: center;
                 gap: 1rem;
                 padding: 0 1rem;
+                font-size: 150%;
 
-                & .bell{
+                & .bell {
                     background-color: #fff;
                     border-radius: 50%;
                     padding: 0.5rem;
-                    font-size: 2rem;
-                    color: #8edafc;                    
+                    color: #8edafc;
                 }
 
-                & .new-messages-ring{
+                & .new-messages-ring {
                     font-size: 0.9rem;
                     font-weight: 500;
                 }
-                & .turn-on-ring{
+
+                & .turn-on-ring {
                     font-size: 0.85rem;
                     color: grey;
                     text-decoration: underline;
                 }
             }
 
-            & .search{
+            & .search {
                 background-color: #fafafa;
                 color: #b8bbbd;
+                font-size: 120%;
+                /* overflow-x: hidden; */
 
-                & .magnifier{
-                    font-size: 1.25rem;
+                & .magnifier {
                     background-color: #fff;
                     padding: 2px 1rem 6px;
                     margin: 0 -1rem 0 1rem;
                 }
 
-                & input{
+                & input {
                     width: 80%;
                     padding: 8px;
                     margin: 7px 10px;
@@ -137,7 +137,7 @@
             }
 
             & .user {
-                height: 80px;
+                height: 90px;
                 display: flex;
                 align-items: center;
                 gap: 1rem;
@@ -145,16 +145,18 @@
                 border-top: 2px solid #fafafa;
                 border-bottom: 2px solid #fafafa;
 
-                & .user-name{
+                & .user-name {
                     font-size: 1.15rem;
                     font-weight: 600;
                 }
-                & .preview-message{
+
+                & .preview-message {
                     font-size: 0.85rem;
                     color: #b8bbbd;
                     margin-right: 2.5rem;
                 }
-                & .time{
+
+                & .time {
                     color: #b8bbbd;
                     margin: 0.5rem;
                     font-size: 0.85rem;
@@ -174,31 +176,32 @@
                 background-color: #eaeaea;
                 display: flex;
                 align-items: center;
-                
+
                 & .avatar-container {
                     margin: 0.5rem 1rem;
                     width: 7%;
                     aspect-ratio: 1;
                     overflow: hidden;
                     border-radius: 50%;
-                    
+
                     & img {
-                      margin: auto;
-                      height: 100%;
-                      width: auto;
+                        margin: auto;
+                        height: 100%;
+                        width: auto;
                     }
                 }
 
-                & .user-name{
+                & .user-name {
                     font-size: 1.15rem;
                     font-weight: 600;
                 }
-                & .last-seen{
+
+                & .last-seen {
                     font-size: 0.85rem;
                     color: grey;
                 }
 
-                & .user-commands{
+                & .user-commands {
                     width: 60%;
                     font-size: 1.5rem;
                     display: flex;
@@ -233,7 +236,7 @@
                     font-weight: 500;
                     position: relative;
 
-                    & .time{
+                    & .time {
                         color: #b8bbbd;
                         margin: 0.5rem;
                         font-size: 0.85rem;
@@ -242,7 +245,7 @@
                         right: 1px
                     }
 
-                    & .btd{
+                    & .btd {
                         font-weight: 00;
                         color: #b8bbbd;
                         position: absolute;
@@ -256,7 +259,7 @@
                     background-color: #d5f9ba;
                 }
 
-                & .baloon.answer{
+                & .baloon.answer {
                     background-color: #fff;
                 }
 
@@ -265,6 +268,21 @@
             & .type-section {
                 height: 70px;
                 background-color: #f3eeea;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                font-size: 180%;
+                padding: 2rem;
+                color: grey;
+
+                & input {
+                    font-size: 0.85rem;
+                    border: none;
+                    width: 85%;
+                    padding: 0.75rem;
+                    border-radius: 5px;
+                }
+
             }
         }
 
@@ -287,8 +305,8 @@
                     display: none;
                 }
 
-                & .chat-list{
-                height: calc(100% - 70px);
+                & .chat-list {
+                    height: calc(100% - 70px);
                 }
             }
 
@@ -305,12 +323,12 @@
     .container {
 
         & .app {
-            
+
             & .app-left {
                 display: none;
             }
 
-            & .app-right{
+            & .app-right {
                 width: 100%;
             }
         }
@@ -323,15 +341,6 @@
 
 
 /* ### DEBUG SECTION ### */
-
-.debug * {
-    /* border: 1px dashed grey; */
-}
-
-.debug .container {
-    width: 100vw;
-    height: 679px;
-}
 
 .debug .app-left {
     height: 100%;
