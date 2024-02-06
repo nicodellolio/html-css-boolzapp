@@ -343,6 +343,7 @@
 
 }
 
+/* ### HTML FOR THE BONUS ### */
 .emoji{
     position: relative;
 
@@ -369,8 +370,8 @@
     
 }
 
-/* ### BONUS SECTION ### */
 
+/* ### BONUS SECTION ### */
 .menu-drop-down:hover .options-menu {
     display: block;
     padding: 0;
@@ -402,10 +403,10 @@
 }
 
 
-
-
-
-
+.record:hover .fa-microphone{
+    color: red;
+    cursor: pointer;
+}
 
 
 /* ### MEDIA QUERIES ### */
