@@ -179,7 +179,7 @@
 
                 & .avatar-container {
                     margin: 0.5rem 1rem;
-                    width: 7%;
+                    width: 6%;
                     aspect-ratio: 1;
                     overflow: hidden;
                     border-radius: 50%;
@@ -202,13 +202,15 @@
                 }
 
                 & .user-commands {
-                    width: 60%;
+                    width: 65%;
                     font-size: 1.5rem;
                     display: flex;
                     justify-content: flex-end;
                     gap: 1.25rem;
                     align-items: center;
                     color: #b1b1b1;
+                    padding-right: 3%;
+
                 }
 
             }
@@ -300,6 +302,18 @@
             & .app-left {
                 width: calc((100% / 12) * 1);
 
+                & .myself {
+                    border-right: 1px solid #b1b1b15b;
+
+                    & .avatar-container {
+                        width: 80%;
+                    }
+
+                    .user-commands {
+                        display: none;
+                    }
+                }
+
                 & .notification,
                 .search {
                     display: none;
@@ -307,75 +321,88 @@
 
                 & .chat-list {
                     height: calc(100% - 70px);
+
+                    & .text-user-chatlist,
+                    .time {
+                        display: none;
+                    }
+
+                    & .avatar-container {
+                        width: 100%;
+                    }
                 }
             }
 
             & .app-right {
                 width: calc((100% / 12) * 11);
 
+                & .selected-user{
+                    & .user-commands {
+                        width: 67%;
+                        padding-right: 5%;
+                    }
+
+                }
+            }
+        }
+
+    }
+
+    @media screen and (max-width: 540px) {
+        .container {
+
+            & .app {
+
+                & .app-left {
+                    display: none;
+                }
+
+                & .app-right {
+                    width: 100%;
+                }
             }
         }
     }
 
-}
 
-@media screen and (max-width: 540px) {
-    .container {
 
-        & .app {
 
-            & .app-left {
-                display: none;
-            }
 
-            & .app-right {
-                width: 100%;
-            }
-        }
+
+    /* ### DEBUG SECTION ### */
+
+    .debug .app-left {
+        height: 100%;
     }
-}
 
+    .debug .myself {
+        background-color: #ff00ffa2;
+    }
 
+    .debug .notification {
+        background-color: #0000ffa2;
+    }
 
+    .debug .user {
+        height: 20%;
+    }
 
+    .debug .app-right {
+        background-color: #0cd141bb;
+    }
 
+    .debug .selected-user {
+        background-color: #4bcecaa2;
+    }
 
-/* ### DEBUG SECTION ### */
+    .debug .chat {
+        background-color: #99cd32a2;
+    }
 
-.debug .app-left {
-    height: 100%;
-}
+    .debug .baloon {
+        background-color: grey;
+    }
 
-/* .debug .myself {
-    background-color: #ff00ffa2;
-} */
-
-/* .debug .notification {
-    background-color: #0000ffa2;
-} */
-
-.debug .user {
-    height: 20%;
-}
-
-
-
-.debug .app-right {
-    background-color: #0cd141bb;
-}
-
-.debug .selected-user {
-    background-color: #4bcecaa2;
-}
-
-.debug .chat {
-    background-color: #99cd32a2;
-}
-
-.debug .baloon {
-    background-color: grey;
-}
-
-.debug .type-section {
-    background-color: #ff00ffa2;
-}
+    .debug .type-section {
+        background-color: #ff00ffa2;
+    }
