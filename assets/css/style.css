@@ -232,7 +232,7 @@
             & .chat {
                 height: calc(100% - 140px);
                 background-image: url(../img/mine.jpg);
-                overflow: scroll;
+                overflow-y: scroll;
             }
 
             & .baloons {
@@ -267,7 +267,8 @@
                         color: #b8bbbd;
                         position: absolute;
                         top: 1rem;
-                        right: 10px
+                        right: 1rem;
+                        transform: none;
                     }
                 }
 
@@ -282,64 +283,85 @@
 
             }
 
-            /* ### BONUS MENU ### */
-            .options-menu {
-                display: none;
-                position: absolute;
-                right: -15px;
-                top: 40px;
-                z-index: 5;
+           
 
-                &>ul {
-                    list-style: none;
-                    background-color: var(--bg-search-);
-                    width: fit-content;
-                    padding: 1rem;
-                    line-height: 2;
-                    border-radius: 15px;
+        }
+    }
+
+}
 
 
-                    & li:last-child {
-                        border-top: 1px solid grey;
-                        padding-top: 0.25rem;
-                        margin-top: 0.25rem;
-                        color: red;
-                    }
+/* ### BONUS MENU ### */
+.options-menu {
+    display: none;
+    width: 130px;
+    position: absolute;
+    top: 20px;
+    right: -5rem;
+    z-index: 1;
 
-                }
+    &>ul {
+        list-style: none;
+        background-color: var(--bg-search-);
+        min-width: fit-content;
+        padding: 1rem;
+        line-height: 2;
+        border-radius: 15px;
+        color: black;
 
-            }
 
-            & .type-section {
-                height: 70px;
-                background-color: var(--bg-type-);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                font-size: 180%;
-                padding: 3%;
-                color: grey;
-
-                & input {
-                    font-size: 0.85rem;
-                    border: none;
-                    width: 85%;
-                    padding: 0.75rem;
-                    border-radius: 5px;
-                }
-
-            }
+        & li:last-child {
+            border-top: 1px solid grey;
+            padding-top: 0.25rem;
+            margin-top: 0.25rem;
+            color: red;
         }
 
     }
 
 }
 
+& .type-section {
+    height: 70px;
+    background-color: var(--bg-type-);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 180%;
+    padding: 3%;
+    color: grey;
+
+    & input {
+        font-size: 0.85rem;
+        border: none;
+        width: 85%;
+        padding: 0.75rem;
+        border-radius: 5px;
+    }
+}
+
 /* ### BONUS SECTION ### */
 
-.app:hover .options-menu{
+.menu-drop-down:hover .options-menu {
     display: block;
+    padding: 0;
 }
+.options-menu li:hover{
+    background-color: rgb(223, 222, 222);
+    font-weight: 800;
+    cursor: pointer;
+    padding: .25rem;
+}
+
+.menu-drop-down:hover .fa-chevron-down{
+    transform: rotate(180deg);
+}
+
+
+
+
+
+/* ### MEDIA QUERIES ### */
 
 
 @media screen and (max-width: 991px) {
