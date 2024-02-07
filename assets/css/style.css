@@ -11,19 +11,11 @@
     --bg-mybaloon-: #d5f9ba;
 }
 
-& .avatar-container {
-    margin: 0.5rem 0;
-    width: 55px;
-    aspect-ratio: 1;
-    overflow: hidden;
+& img {
+    max-width: 55px;
+    max-height: 55px;
     border-radius: 50%;
-
-    & img {
-        margin: auto;
-        width: 100%;
-    }
 }
-
 
 /* ### MAIN STYLE SHEET ### */
 * {
@@ -65,6 +57,10 @@
                 display: flex;
                 justify-content: space-around;
                 padding-left: 0.25rem;
+
+                > img{
+                    margin-top: 0.5rem;
+                }
 
                 & .user-commands {
                     width: 75%;
@@ -108,7 +104,7 @@
                     color: grey;
                     text-decoration: underline;
                     overflow: hidden;
-
+                    cursor: pointer;
                 }
             }
 
@@ -190,20 +186,6 @@
                 justify-content: space-around;
                 align-items: center;
 
-                & .avatar-container {
-                    margin: 0.5rem 1rem;
-                    width: 55px;
-                    aspect-ratio: 1;
-                    overflow: hidden;
-                    border-radius: 50%;
-
-                    & img {
-                        margin: auto;
-                        height: 100%;
-                        width: auto;
-                    }
-                }
-
                 & .user-name {
                     font-size: 1.15rem;
                     font-weight: 600;
@@ -270,7 +252,7 @@
                         right: 1rem;
                         transform: none;
 
-                        & .fa-chevron-down{
+                        & .fa-chevron-down {
                             transition: all 0.75s ease;
                         }
                     }
@@ -286,8 +268,6 @@
                 }
 
             }
-
-           
 
         }
     }
@@ -314,6 +294,12 @@
 }
 
 /* ### BONUS MENU ### */
+
+.fa-regular,
+.fa-solid {
+    cursor: pointer;
+}
+
 .options-menu {
     display: none;
     width: 130px;
@@ -344,14 +330,15 @@
 }
 
 /* ### HTML FOR THE BONUS ### */
-.emoji{
+.emoji {
     position: relative;
 
-    & .fa-face-smile{
+    & .fa-face-smile {
         transition: all 0.4s ease-out;
     }
 }
-.emoji-table{
+
+.emoji-table {
     display: flex;
     visibility: hidden;
     background-color: var(--bg-search-);
@@ -363,11 +350,12 @@
     left: -1rem;
     transition: all 0.2s ease-out;
 }
-.single-emoji{
+
+.single-emoji {
     font-size: 2.5rem;
     padding: 0.5rem 1.85rem;
-    width: calc((100% / 12) + 12% );
-    
+    width: calc((100% / 12) + 12%);
+
 }
 
 
@@ -376,13 +364,15 @@
     display: block;
     padding: 0;
 }
-.options-menu li:hover{
+
+.options-menu li:hover {
     background-color: rgb(223, 222, 222);
     font-weight: 700;
     cursor: pointer;
     padding: .25rem;
 }
-.menu-drop-down:hover .fa-chevron-down{
+
+.menu-drop-down:hover .fa-chevron-down {
     transform: rotate(180deg);
 }
 
@@ -390,12 +380,14 @@
 .emoji:hover .emoji-table {
     visibility: visible;
 }
-.emoji-table .single-emoji:hover{
+
+.emoji-table .single-emoji:hover {
     background-color: rgb(223, 222, 222);
     cursor: pointer;
     padding: 3px;
 }
-.emoji:hover .fa-face-smile{
+
+.emoji:hover .fa-face-smile {
     background-color: var(--bg-buttons-);
     font-size: 2rem;
     border-radius: 50%;
@@ -403,7 +395,7 @@
 }
 
 
-.record:hover .fa-microphone{
+.record:hover .fa-microphone {
     color: red;
     cursor: pointer;
 }
@@ -478,8 +470,14 @@
                     width: 100%;
 
                     & .selected-user {
+
+                        > * {
+                        margin: 0.5rem;
+                        }
+
+
                         & .last-seen {
-                            width: 120%;
+                            width: 150%;
                         }
                     }
 
